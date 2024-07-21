@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://phrala3y17gl"]
+
+[ext_resource type="Texture2D" uid="uid://dkiv72u7xuih0" path="res://sprits/player.png" id="1_ak1st"]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_ak1st")
+hframes = 3
+vframes = 6
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

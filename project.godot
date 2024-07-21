@@ -14,6 +14,25 @@ config/name="Recreating Jump Jerboa"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=180
+window/size/viewport_height=320
+window/size/window_width_override=720
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="Recreating Jump Jerboa"
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="coins"
+2d_physics/layer_3="terren"
+2d_physics/layer_4="objects"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
