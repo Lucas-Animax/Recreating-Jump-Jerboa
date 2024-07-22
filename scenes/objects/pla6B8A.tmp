@@ -100,24 +100,20 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("spr", "wall_ray")]
-collision_mask = 15
 script = ExtResource("1_wwrql")
 spr = NodePath("PlayerSprit")
 wall_ray = NodePath("RayCast2D")
-speed = 120.0
+speed = 64.0
 
-[node name="PlayerSprit" type="Sprite2D" parent="." node_paths=PackedStringArray("player_ref", "anim")]
+[node name="PlayerSprit" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("1_ak1st")
 hframes = 3
 vframes = 4
 script = ExtResource("3_8tcci")
-player_ref = NodePath("..")
-anim = NodePath("../AnimationPlayer")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 0)
-collision_mask = 5
+target_position = Vector2(15, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4.5)
