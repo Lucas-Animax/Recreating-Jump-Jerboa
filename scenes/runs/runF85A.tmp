@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://7tsm2xuimrrg"]
+[gd_scene load_steps=6 format=3 uid="uid://7tsm2xuimrrg"]
 
 [ext_resource type="PackedScene" uid="uid://phrala3y17gl" path="res://scenes/objects/player.tscn" id="1_n5gr2"]
 [ext_resource type="Texture2D" uid="uid://cgsph772u1rnc" path="res://icon.svg" id="2_fgxft"]
-[ext_resource type="PackedScene" uid="uid://bt5mskovywj26" path="res://scenes/objects/coin.tscn" id="4_r44wx"]
-[ext_resource type="PackedScene" uid="uid://brpo4mrc4o5t3" path="res://scenes/objects/rosaline.tscn" id="5_kggu8"]
-[ext_resource type="PackedScene" uid="uid://cxggirh27jtra" path="res://scenes/objects/wall_false.tscn" id="6_ondxi"]
+[ext_resource type="PackedScene" uid="uid://4hkmog3p447" path="res://scenes/objects/espinhos.tscn" id="3_ntxhx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5522q"]
 size = Vector2(128.125, 391)
@@ -12,13 +10,10 @@ size = Vector2(128.125, 391)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nelss"]
 size = Vector2(346, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulkn1"]
-size = Vector2(23, 36)
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_n5gr2")]
-position = Vector2(43, 290)
+position = Vector2(89, 196)
 speed = 90.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -58,18 +53,5 @@ shape = SubResource("RectangleShape2D_nelss")
 scale = Vector2(-2.71563, -0.138857)
 texture = ExtResource("2_fgxft")
 
-[node name="coin" parent="." instance=ExtResource("4_r44wx")]
-position = Vector2(122, 261)
-
-[node name="rosaline" parent="." instance=ExtResource("5_kggu8")]
-position = Vector2(126, 296)
-
-[node name="wall_false" parent="." instance=ExtResource("6_ondxi")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_false"]
-position = Vector2(172.5, 291)
-shape = SubResource("RectangleShape2D_ulkn1")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall_false"]
-position = Vector2(3, 291)
-shape = SubResource("RectangleShape2D_ulkn1")
+[node name="espinhos" parent="." instance=ExtResource("3_ntxhx")]
+position = Vector2(43, 272)
