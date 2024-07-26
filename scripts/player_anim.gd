@@ -20,11 +20,11 @@ func check_side(dic:float):
 	if dic == 1:
 		player_ref.direction = -1
 		flip_h = false
-		player_ref.wall_ray.target_position = Vector2(10,0)
+		player_ref.wall_ray.target_position = Vector2(5,0)
 	elif dic == -1:
 		player_ref.direction = 1
 		flip_h = true
-		player_ref.wall_ray.target_position = Vector2(-10,0)
+		player_ref.wall_ray.target_position = Vector2(-5,0)
 
 func anim_horizontal(dic):
 	if dic != 0:

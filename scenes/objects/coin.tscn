@@ -1,20 +1,83 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt5mskovywj26"]
+[gd_scene load_steps=8 format=3 uid="uid://bt5mskovywj26"]
 
 [ext_resource type="Script" path="res://scripts/coin.gd" id="1_s7pvc"]
-[ext_resource type="Texture2D" uid="uid://cgsph772u1rnc" path="res://icon.svg" id="2_bmvlj"]
+[ext_resource type="Texture2D" uid="uid://dmi8du7oly2nw" path="res://sprits/estrela.png" id="2_r1vg6"]
+
+[sub_resource type="Animation" id="Animation_qavnl"]
+resource_name = "play"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_a885r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_swu4o"]
+resource_name = "coletion"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [8, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_173q5"]
+_data = {
+"RESET": SubResource("Animation_a885r"),
+"coletion": SubResource("Animation_swu4o"),
+"play": SubResource("Animation_qavnl")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s3x7d"]
-radius = 3.16228
+radius = 1.69479
 
-[node name="coin" type="Area2D"]
+[node name="coin" type="Area2D" node_paths=PackedStringArray("anim")]
 script = ExtResource("1_s7pvc")
+anim = NodePath("Sprite2D/AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 0, 1)
-scale = Vector2(0.0467889, 0.0427451)
-texture = ExtResource("2_bmvlj")
+scale = Vector2(0.5, 0.457)
+texture = ExtResource("2_r1vg6")
+hframes = 9
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_173q5")
+}
+autoplay = "play"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.77013, 1.80011)
 shape = SubResource("CircleShape2D_s3x7d")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
