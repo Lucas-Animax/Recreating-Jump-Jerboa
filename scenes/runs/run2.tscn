@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7urh2k1sebrn"]
+
+[ext_resource type="PackedScene" uid="uid://brpo4mrc4o5t3" path="res://scenes/objects/rosaline.tscn" id="1_c66ak"]
+[ext_resource type="PackedScene" uid="uid://cxggirh27jtra" path="res://scenes/objects/wall_false.tscn" id="2_yx31h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jejok"]
+size = Vector2(20, 332)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="rosaline" parent="." instance=ExtResource("1_c66ak")]
+position = Vector2(85, 237)
+
+[node name="wall_false" parent="." instance=ExtResource("2_yx31h")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_false"]
+position = Vector2(0, 156)
+shape = SubResource("RectangleShape2D_jejok")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall_false"]
+position = Vector2(178, 156)
+shape = SubResource("RectangleShape2D_jejok")

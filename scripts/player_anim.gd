@@ -6,11 +6,14 @@ extends Sprite2D
 @export var anim:AnimationPlayer
 
 
+
 func animate(dic:float,dicV2:Vector2):
 	if dicV2.y != 0:
 		anim_vertical(dicV2)
 	elif dicV2.x != 0:
 		anim_horizontal(dic)
+	if player_ref.is_dead:
+		anim_dead()
 	check_side(dic)
 
 func check_side(dic:float):
@@ -35,6 +38,13 @@ func anim_vertical(dicV2:Vector2):
 	elif dicV2.y > 0:
 		anim.play("down")
 	pass 
+func anim_dead():
+	anim.play("dead")
+	
+	
+	
+	
+	pass
 
 
 

@@ -1,7 +1,8 @@
-@icon("res://sprits/player.png")
+@icon("res://sprits/player_icon.png")
 extends CharacterBody2D
 class_name PlayerClass
 @export_category("Objects")
+@export var find_coin:Node
 @export var spr:Sprite2D
 @export var wall_ray:RayCast2D
 @export_category("Variebles")
@@ -18,13 +19,15 @@ const wall_gravit = 30
 const wall_impuse =1000
 const wall_jump = 350
 #endregion
+var is_dead = false
 
 func _physics_process(delta):
-	move()
-	switch_sides()
-	move_and_slide()
+	if not is_dead:
+		move()
+		switch_sides()
+		jump()
+		move_and_slide()
 	spr.animate(dic,velocity)
-	jump()
 	gravit()
 
 func move():
@@ -73,3 +76,10 @@ func gravit():
 		velocity.y += gravit_value
 		if velocity.y >=  gravit_value:
 			velocity.y = gravit_value
+
+func dead():
+	is_dead = true
+	if is_dead:
+		await get_tree().create_timer(0.4).timeout
+		get_tree().reload_current_scene()
+	pass
