@@ -4,6 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://dx1q1ikqpr42k" path="res://sprits/enemy_rosaline_sprit_sheet.png" id="2_uq8uh"]
 [ext_resource type="PackedScene" uid="uid://gq6hhqm1bsdx" path="res://scenes/objects/dano_player.tscn" id="3_3naba"]
 
+[sub_resource type="Animation" id="Animation_s83lq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_sgdhi"]
 resource_name = "walk"
 length = 0.3
@@ -19,21 +34,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
-}
-
-[sub_resource type="Animation" id="Animation_s83lq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5si51"]
@@ -56,7 +56,7 @@ script = ExtResource("1_b2f2c")
 spr = NodePath("Sprite2D")
 wall_ray = NodePath("RayCast2D")
 anim = NodePath("Sprite2D/AnimationPlayer")
-speed = 64
+speed = 30
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_uq8uh")

@@ -43,7 +43,9 @@ jump={
 2d_physics/layer_4="objects"
 2d_physics/layer_5="enemys"
 2d_physics/layer_6="wall_false"
+2d_navigation/defaults/default_clear_color=Color(0.133091, 1.21289e-05, 0.555992, 1)
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.157019, 0.000137846, 0.474697, 1)

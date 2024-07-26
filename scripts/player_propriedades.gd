@@ -14,10 +14,10 @@ var direction:int = 1
 #endregion
 #region cosnts
 const gravit_value = 50
-const jump_value = 550
+const jump_value = 500
 const wall_gravit = 30
 const wall_impuse =1000
-const wall_jump = 350
+const wall_jump = 300
 #endregion
 var is_dead = false
 

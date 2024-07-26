@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scenes/objects/Colect_coins.gd" id="4_lul5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tgvo"]
-size = Vector2(16, 15)
+size = Vector2(8, 7)
 
 [sub_resource type="Animation" id="Animation_q5pfy"]
 length = 0.001
@@ -21,6 +21,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wgp0v"]
+resource_name = "dead"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [12, 14]
 }
 
 [sub_resource type="Animation" id="Animation_geeku"]
@@ -91,22 +107,6 @@ tracks/0/keys = {
 "values": [9]
 }
 
-[sub_resource type="Animation" id="Animation_wgp0v"]
-resource_name = "dead"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [12, 14]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0wc7q"]
 _data = {
 "RESET": SubResource("Animation_q5pfy"),
@@ -123,10 +123,9 @@ script = ExtResource("1_wwrql")
 find_coin = NodePath("Colect_coins")
 spr = NodePath("PlayerSprit")
 wall_ray = NodePath("RayCast2D")
-speed = 120.0
+speed = 64.0
 
 [node name="PlayerSprit" type="Sprite2D" parent="." node_paths=PackedStringArray("player_ref", "anim")]
-scale = Vector2(2, 2)
 texture = ExtResource("2_j6da2")
 hframes = 3
 vframes = 5
@@ -135,12 +134,11 @@ player_ref = NodePath("..")
 anim = NodePath("../AnimationPlayer")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 0)
+target_position = Vector2(5, 0)
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 4.5)
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_8tgvo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
