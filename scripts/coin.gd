@@ -1,5 +1,5 @@
+@icon("res://sprits/estrela_icon.png")
 extends Area2D
-
 var player_ref:PlayerClass = null
 @export var anim:AnimationPlayer
 
@@ -9,6 +9,5 @@ func _on_body_entered(body):
 		anim.play("coletion")
 		await get_tree().create_timer(0.3).timeout
 		player_ref.find_coin.add_coin()
-		
 		queue_free()
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player_propriedades.gd" id="1_wwrql"]
 [ext_resource type="Texture2D" uid="uid://bk8yeovpsphyf" path="res://sprits/player_sprit_sheet.png" id="2_j6da2"]
 [ext_resource type="Script" path="res://scripts/player_anim.gd" id="3_8tcci"]
-[ext_resource type="Script" path="res://scenes/objects/Colect_coins.gd" id="4_lul5k"]
+[ext_resource type="Script" path="res://scripts/Colect_coins.gd" id="4_6g5ov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tgvo"]
 size = Vector2(8, 7)
@@ -148,4 +148,4 @@ libraries = {
 }
 
 [node name="Colect_coins" type="Node" parent="."]
-script = ExtResource("4_lul5k")
+script = ExtResource("4_6g5ov")

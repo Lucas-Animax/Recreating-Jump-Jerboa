@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://7tsm2xuimrrg"]
+[gd_scene load_steps=7 format=3 uid="uid://7tsm2xuimrrg"]
 
 [ext_resource type="PackedScene" uid="uid://phrala3y17gl" path="res://scenes/objects/player.tscn" id="1_n5gr2"]
 [ext_resource type="PackedScene" uid="uid://bt5mskovywj26" path="res://scenes/objects/coin.tscn" id="4_r44wx"]
 [ext_resource type="PackedScene" uid="uid://1mpdnluark7s" path="res://scenes/objects/tile_map.tscn" id="5_48nni"]
 [ext_resource type="PackedScene" uid="uid://brpo4mrc4o5t3" path="res://scenes/objects/rosaline.tscn" id="5_kggu8"]
-[ext_resource type="PackedScene" uid="uid://b052torqpsshi" path="res://scenes/objects/pass_menu.tscn" id="6_b1odj"]
 [ext_resource type="PackedScene" uid="uid://cxggirh27jtra" path="res://scenes/objects/wall_false.tscn" id="6_ondxi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulkn1"]
@@ -42,5 +41,3 @@ position = Vector2(61, 219)
 
 [node name="coin3" parent="Coins" instance=ExtResource("4_r44wx")]
 position = Vector2(77, 105)
-
-[node name="Pass_Menu" parent="." instance=ExtResource("6_b1odj")]
