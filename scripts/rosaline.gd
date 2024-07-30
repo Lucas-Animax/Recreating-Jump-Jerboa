@@ -11,7 +11,7 @@ var dic = -1
 
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	move()
 	change_side()
 	flip_h()

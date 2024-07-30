@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Recreating Jump Jerboa"
-run/main_scene="res://scenes/objects/player.tscn"
+run/main_scene="res://scenes/objects/entites/player.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

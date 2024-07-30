@@ -80,6 +80,9 @@ func gravit():
 func dead():
 	is_dead = true
 	if is_dead:
+		find_iten.key_cont = 0
+		find_iten.coin_cont = 0
 		await get_tree().create_timer(0.4).timeout
 		get_tree().reload_current_scene()
 	pass
+
