@@ -15,6 +15,10 @@ run/main_scene="res://scenes/objects/entites/player.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Word="res://scripts/word.gd"
+
 [display]
 
 window/size/viewport_width=180

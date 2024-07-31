@@ -20,6 +20,7 @@ texture_normal = ExtResource("2_lw0em")
 shape = SubResource("RectangleShape2D_g74lu")
 script = ExtResource("3_kb50k")
 current_level = 1
+need_keys = 1
 
 [node name="run2" type="TouchScreenButton" parent="."]
 position = Vector2(63, 119)
@@ -27,21 +28,10 @@ scale = Vector2(0.59375, 0.5)
 texture_normal = ExtResource("2_lw0em")
 shape = SubResource("RectangleShape2D_nbui0")
 script = ExtResource("3_kb50k")
-current_level = 2
-need_keys = 1
-
-[node name="run3" type="TouchScreenButton" parent="."]
-position = Vector2(64, 225)
-scale = Vector2(0.59375, 0.5)
-texture_normal = ExtResource("2_lw0em")
-shape = SubResource("RectangleShape2D_nbui0")
-script = ExtResource("3_kb50k")
-current_level = 2
-need_keys = 2
+current_level = 1
+need_keys = null
 
 [connection signal="pressed" from="run" to="." method="_on_run_pressed"]
 [connection signal="pressed" from="run" to="run" method="_on_pressed"]
 [connection signal="pressed" from="run2" to="." method="_on_run_pressed"]
 [connection signal="pressed" from="run2" to="run2" method="_on_pressed"]
-[connection signal="pressed" from="run3" to="." method="_on_run_pressed"]
-[connection signal="pressed" from="run3" to="run3" method="_on_pressed"]

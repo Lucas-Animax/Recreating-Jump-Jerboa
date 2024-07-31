@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d057lkpdpnbhe"]
 
+[ext_resource type="Script" path="res://scripts/objects/door.gd" id="1_f1xnx"]
 [ext_resource type="Texture2D" uid="uid://d1plphpfqufxd" path="res://sprits/porta.png" id="1_qe5sp"]
-[ext_resource type="Script" path="res://scripts/door.gd" id="1_qexi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jj8si"]
 size = Vector2(18, 12)
@@ -61,8 +61,7 @@ _data = {
 }
 
 [node name="Door" type="Area2D" node_paths=PackedStringArray("anim")]
-script = ExtResource("1_qexi7")
-need_keys = null
+script = ExtResource("1_f1xnx")
 anim = NodePath("Porta/AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

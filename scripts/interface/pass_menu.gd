@@ -41,6 +41,8 @@ func _on_touch_reload_pressed():
 	get_tree().paused = false
 	visible = false
 	reload = true
+	find_iten.key_cont = 0
+	find_iten.coin_cont = 0
 	get_tree().reload_current_scene()
 
 	pass # Replace with function body.

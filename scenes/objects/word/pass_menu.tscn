@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b052torqpsshi"]
 
-[ext_resource type="Script" path="res://scripts/pass_menu.gd" id="1_lebm6"]
+[ext_resource type="Script" path="res://scripts/interface/pass_menu.gd" id="1_7e4ja"]
 [ext_resource type="Theme" uid="uid://bh1i173ctldqs" path="res://scenes/themes/pass_menu.tres" id="2_x4w26"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18x7r"]
@@ -11,7 +11,7 @@
 
 [node name="Pass_Menu" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_lebm6")
+script = ExtResource("1_7e4ja")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

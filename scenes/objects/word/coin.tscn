@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bt5mskovywj26"]
 
-[ext_resource type="Script" path="res://scripts/coin.gd" id="1_s7pvc"]
+[ext_resource type="Script" path="res://scripts/itens/coin.gd" id="1_dtb0b"]
 [ext_resource type="Texture2D" uid="uid://dmi8du7oly2nw" path="res://sprits/estrela.png" id="2_r1vg6"]
 
 [sub_resource type="Animation" id="Animation_a885r"]
@@ -61,7 +61,7 @@ _data = {
 radius = 1.69479
 
 [node name="coin" type="Area2D" node_paths=PackedStringArray("anim")]
-script = ExtResource("1_s7pvc")
+script = ExtResource("1_dtb0b")
 anim = NodePath("Sprite2D/AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

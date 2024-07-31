@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dtskkfdopq382"]
 
-[ext_resource type="Script" path="res://scripts/key.gd" id="1_g8lvj"]
 [ext_resource type="Texture2D" uid="uid://crxts2qwvmhq8" path="res://sprits/chave_icon.png" id="1_k4ovw"]
+[ext_resource type="Script" path="res://scripts/itens/key.gd" id="1_lrxtt"]
 [ext_resource type="Texture2D" uid="uid://fphwa0jtjl1o" path="res://sprits/light.png" id="2_rknob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btwn5"]
@@ -170,7 +170,7 @@ _data = {
 }
 
 [node name="Key" type="Area2D" node_paths=PackedStringArray("anim")]
-script = ExtResource("1_g8lvj")
+script = ExtResource("1_lrxtt")
 anim = NodePath("Sprite2D/AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
