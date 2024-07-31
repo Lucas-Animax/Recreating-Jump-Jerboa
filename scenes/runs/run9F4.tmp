@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://7tsm2xuimrrg"]
 
-[ext_resource type="Script" path="res://scripts/run.gd" id="1_68fdh"]
+[ext_resource type="Script" path="res://scenes/runs/run1.gd" id="1_ismxq"]
 [ext_resource type="PackedScene" uid="uid://phrala3y17gl" path="res://scenes/objects/entites/player.tscn" id="1_n5gr2"]
 [ext_resource type="PackedScene" uid="uid://bt5mskovywj26" path="res://scenes/objects/word/coin.tscn" id="4_r44wx"]
 [ext_resource type="PackedScene" uid="uid://1mpdnluark7s" path="res://scenes/objects/word/tile_map.tscn" id="5_48nni"]
@@ -18,9 +18,7 @@ glow_enabled = true
 glow_normalized = true
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_68fdh")
-name_run = "key_run1"
-need_key = 1
+script = ExtResource("1_ismxq")
 
 [node name="Pass_Menu" parent="." instance=ExtResource("6_b1odj")]
 visible = false
@@ -48,9 +46,6 @@ position = Vector2(48, 274)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="word"]
 environment = SubResource("Environment_vlyx3")
-
-[node name="Key2" parent="word" instance=ExtResource("6_itfcm")]
-position = Vector2(91, 134)
 
 [node name="entities" type="Node" parent="."]
 

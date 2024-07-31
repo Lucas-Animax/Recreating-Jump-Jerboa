@@ -1,14 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://7tsm2xuimrrg"]
+[gd_scene load_steps=12 format=3 uid="uid://b7jmi77x5wan2"]
 
-[ext_resource type="Script" path="res://scripts/run.gd" id="1_68fdh"]
-[ext_resource type="PackedScene" uid="uid://phrala3y17gl" path="res://scenes/objects/entites/player.tscn" id="1_n5gr2"]
-[ext_resource type="PackedScene" uid="uid://bt5mskovywj26" path="res://scenes/objects/word/coin.tscn" id="4_r44wx"]
-[ext_resource type="PackedScene" uid="uid://1mpdnluark7s" path="res://scenes/objects/word/tile_map.tscn" id="5_48nni"]
-[ext_resource type="PackedScene" uid="uid://brpo4mrc4o5t3" path="res://scenes/objects/entites/rosaline.tscn" id="5_kggu8"]
-[ext_resource type="PackedScene" uid="uid://b052torqpsshi" path="res://scenes/objects/word/pass_menu.tscn" id="6_b1odj"]
-[ext_resource type="PackedScene" uid="uid://dtskkfdopq382" path="res://scenes/objects/word/key.tscn" id="6_itfcm"]
-[ext_resource type="PackedScene" uid="uid://cxggirh27jtra" path="res://scenes/objects/word/wall_false.tscn" id="6_ondxi"]
-[ext_resource type="PackedScene" uid="uid://d057lkpdpnbhe" path="res://scenes/objects/word/door.tscn" id="7_pgpbj"]
+[ext_resource type="Script" path="res://scripts/run.gd" id="1_m6auj"]
+[ext_resource type="PackedScene" uid="uid://b052torqpsshi" path="res://scenes/objects/word/pass_menu.tscn" id="2_6f0n3"]
+[ext_resource type="PackedScene" uid="uid://d057lkpdpnbhe" path="res://scenes/objects/word/door.tscn" id="3_sr2p0"]
+[ext_resource type="PackedScene" uid="uid://1mpdnluark7s" path="res://scenes/objects/word/tile_map.tscn" id="4_354d2"]
+[ext_resource type="PackedScene" uid="uid://cxggirh27jtra" path="res://scenes/objects/word/wall_false.tscn" id="5_h4ogw"]
+[ext_resource type="PackedScene" uid="uid://dtskkfdopq382" path="res://scenes/objects/word/key.tscn" id="6_hsdii"]
+[ext_resource type="PackedScene" uid="uid://phrala3y17gl" path="res://scenes/objects/entites/player.tscn" id="7_rxp5y"]
+[ext_resource type="PackedScene" uid="uid://brpo4mrc4o5t3" path="res://scenes/objects/entites/rosaline.tscn" id="8_0h6b2"]
+[ext_resource type="PackedScene" uid="uid://bt5mskovywj26" path="res://scenes/objects/word/coin.tscn" id="9_fiqt6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulkn1"]
 size = Vector2(6.5, 36)
@@ -18,22 +18,23 @@ glow_enabled = true
 glow_normalized = true
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_68fdh")
-name_run = "key_run1"
-need_key = 1
+script = ExtResource("1_m6auj")
+name_run = "key_run2"
+need_key = 2
 
-[node name="Pass_Menu" parent="." instance=ExtResource("6_b1odj")]
+[node name="Pass_Menu" parent="." instance=ExtResource("2_6f0n3")]
 visible = false
 
 [node name="word" type="Node" parent="."]
 
-[node name="Door" parent="word" instance=ExtResource("7_pgpbj")]
+[node name="Door" parent="word" instance=ExtResource("3_sr2p0")]
 position = Vector2(45, 138)
+need_keys = 2
 
-[node name="TileMapColision" parent="word" instance=ExtResource("5_48nni")]
+[node name="TileMapColision" parent="word" instance=ExtResource("4_354d2")]
 layer_0/tile_data = PackedInt32Array(1179657, 327680, 4, 1114121, 327680, 3, 1048585, 327680, 3, 983049, 327680, 3, 917513, 327680, 3, 851977, 327680, 3, 786441, 458752, 3, 720905, 327680, 3, 655369, 327680, 3, 589833, 327680, 3, 524297, 327680, 3, 458761, 327680, 3, 393225, 327680, 3, 327689, 327680, 3, 262153, 327680, 3, 196617, 327680, 3, 131081, 327680, 3, 65545, 327680, 2, 1179656, 262144, 4, 1114120, 262144, 3, 1048584, 262144, 3, 983048, 262144, 3, 917512, 262144, 3, 851976, 262144, 3, 786440, 196608, 6, 720904, 262144, 3, 655368, 262144, 3, 589832, 262144, 3, 524296, 262144, 3, 458760, 262144, 3, 393224, 262144, 3, 327688, 262144, 3, 262152, 262144, 3, 196616, 262144, 3, 131080, 262144, 3, 65544, 262144, 2, 1179655, 262144, 4, 1114119, 262144, 3, 1048583, 262144, 3, 983047, 262144, 3, 917511, 262144, 3, 851975, 262144, 3, 786439, 196608, 6, 720903, 262144, 3, 655367, 262144, 3, 589831, 262144, 6, 458759, 262144, 3, 393223, 262144, 3, 327687, 262144, 3, 262151, 262144, 3, 196615, 262144, 3, 131079, 262144, 3, 65543, 262144, 2, 1179654, 458752, 3, 1114118, 65536, 3, 1048582, 65536, 2, 983046, 262144, 3, 917510, 262144, 3, 851974, 262144, 3, 786438, 196608, 6, 720902, 262144, 3, 655366, 262144, 3, 589830, 196608, 6, 458758, 262144, 3, 393222, 262144, 3, 327686, 262144, 3, 262150, 262144, 3, 196614, 262144, 3, 131078, 262144, 3, 65542, 262144, 2, 1179653, 262144, 4, 1114117, 262144, 3, 1048581, 262144, 3, 983045, 262144, 3, 917509, 262144, 3, 851973, 262144, 3, 786437, 131072, 6, 720901, 262144, 3, 655365, 262144, 3, 589829, 196608, 6, 524293, 262144, 3, 458757, 262144, 3, 393221, 262144, 3, 327685, 262144, 3, 262149, 262144, 3, 196613, 262144, 3, 131077, 262144, 3, 65541, 262144, 2, 1179652, 262144, 4, 1114116, 262144, 3, 1048580, 262144, 3, 983044, 262144, 3, 917508, 262144, 6, 851972, 262144, 3, 786436, 262144, 3, 720900, 262144, 3, 655364, 262144, 3, 589828, 196608, 6, 524292, 262144, 3, 458756, 262144, 3, 393220, 262144, 3, 327684, 262144, 3, 262148, 262144, 3, 196612, 262144, 3, 131076, 262144, 3, 65540, 262144, 2, 1179651, 262144, 4, 1114115, 262144, 3, 1048579, 262144, 3, 983043, 262144, 3, 917507, 196608, 6, 786435, 262144, 3, 720899, 262144, 3, 655363, 262144, 3, 589827, 196608, 6, 524291, 262144, 3, 458755, 262144, 3, 393219, 262144, 3, 327683, 262144, 3, 262147, 262144, 3, 196611, 262144, 3, 131075, 262144, 3, 65539, 262144, 2, 1179650, 262144, 4, 1114114, 262144, 3, 1048578, 262144, 3, 983042, 262144, 3, 917506, 196608, 6, 851970, 262144, 6, 786434, 262144, 3, 720898, 262144, 3, 655362, 262144, 3, 589826, 196608, 6, 524290, 262144, 3, 458754, 262144, 3, 393218, 262144, 3, 327682, 262144, 3, 262146, 262144, 3, 196610, 262144, 3, 131074, 262144, 3, 65538, 262144, 2, 1179649, 196608, 4, 1114113, 196608, 3, 1048577, 196608, 3, 983041, 196608, 3, 917505, 458752, 3, 851969, 196608, 3, 786433, 196608, 3, 720897, 196608, 3, 655361, 196608, 3, 589825, 458752, 3, 524289, 196608, 3, 458753, 196608, 3, 393217, 196608, 3, 327681, 196608, 3, 262145, 196608, 3, 196609, 196608, 3, 131073, 196608, 3, 65537, 196608, 2, 65536, 458752, 3, 131072, 458752, 3, 196608, 458752, 3, 262144, 458752, 3, 327680, 458752, 3, 393216, 458752, 3, 458752, 458752, 3, 524288, 458752, 3, 589824, 458752, 3, 655360, 458752, 3, 720896, 458752, 3, 786432, 458752, 3, 851968, 458752, 3, 917504, 458752, 3, 983040, 458752, 3, 1048576, 458752, 3, 1114112, 458752, 3, 1179648, 458752, 3, 0, 458752, 3, 1, 458752, 3, 2, 458752, 3, 3, 458752, 3, 4, 458752, 3, 5, 458752, 3, 6, 458752, 3, 7, 458752, 3, 8, 458752, 3, 9, 458752, 3, 10, 458752, 3, 65546, 458752, 3, 131082, 458752, 3, 196618, 458752, 3, 262154, 458752, 3, 327690, 458752, 3, 393226, 458752, 3, 458762, 458752, 3, 524298, 458752, 3, 589834, 458752, 3, 655370, 458752, 3, 720906, 458752, 3, 786442, 458752, 3, 851978, 458752, 3, 917514, 458752, 3, 983050, 458752, 3, 1048586, 458752, 3, 1114122, 458752, 3, 1179658, 458752, 3, 1245194, 458752, 3, 1310730, 458752, 3, 1245184, 458752, 3, 1245185, 458752, 3, 1245186, 458752, 3, 1245187, 458752, 3, 1245188, 458752, 3, 1245189, 458752, 3, 1245190, 458752, 3, 1245191, 458752, 3, 1245192, 458752, 3, 1245193, 458752, 3, 1310719, 458752, 3, 983054, 458752, 3, 983055, 458752, 3, 983056, 458752, 3, 983057, 458752, 3, 983058, 458752, 3, 917522, 458752, 3, 11, 458752, 3, 65547, 458752, 3, 131083, 458752, 3, 196619, 458752, 3, 262155, 458752, 3, 327691, 458752, 3, 393227, 458752, 3, 458763, 458752, 3, 524299, 458752, 3, 589835, 458752, 3, 589836, 458752, 3, 655372, 458752, 3, 720908, 458752, 3, 786444, 458752, 3, 655371, 458752, 3, 720907, 458752, 3, 786443, 458752, 3, 851980, 458752, 3, 917515, 458752, 3, 851979, 458752, 3, 983051, 458752, 3, 1048587, 458752, 3, 1114123, 458752, 3, 1179659, 458752, 3, 1245195, 458752, 3)
 
-[node name="wall_false" parent="word" instance=ExtResource("6_ondxi")]
+[node name="wall_false" parent="word" instance=ExtResource("5_h4ogw")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="word/wall_false"]
 position = Vector2(145, 185)
@@ -43,31 +44,31 @@ shape = SubResource("RectangleShape2D_ulkn1")
 position = Vector2(82.25, 186)
 shape = SubResource("RectangleShape2D_ulkn1")
 
-[node name="Key" parent="word" instance=ExtResource("6_itfcm")]
-position = Vector2(48, 274)
+[node name="Key" parent="word" instance=ExtResource("6_hsdii")]
+position = Vector2(59, 267)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="word"]
 environment = SubResource("Environment_vlyx3")
 
-[node name="Key2" parent="word" instance=ExtResource("6_itfcm")]
+[node name="Key2" parent="word" instance=ExtResource("6_hsdii")]
 position = Vector2(91, 134)
 
 [node name="entities" type="Node" parent="."]
 
-[node name="Player" parent="entities" instance=ExtResource("1_n5gr2")]
+[node name="Player" parent="entities" instance=ExtResource("7_rxp5y")]
 position = Vector2(63, 81)
 
-[node name="rosaline" parent="entities" instance=ExtResource("5_kggu8")]
+[node name="rosaline" parent="entities" instance=ExtResource("8_0h6b2")]
 position = Vector2(114, 183)
 scale = Vector2(1, 1)
 
 [node name="Coins" type="Node" parent="."]
 
-[node name="coin" parent="Coins" instance=ExtResource("4_r44wx")]
+[node name="coin" parent="Coins" instance=ExtResource("9_fiqt6")]
 position = Vector2(122, 261)
 
-[node name="coin2" parent="Coins" instance=ExtResource("4_r44wx")]
+[node name="coin2" parent="Coins" instance=ExtResource("9_fiqt6")]
 position = Vector2(61, 219)
 
-[node name="coin3" parent="Coins" instance=ExtResource("4_r44wx")]
+[node name="coin3" parent="Coins" instance=ExtResource("9_fiqt6")]
 position = Vector2(77, 105)

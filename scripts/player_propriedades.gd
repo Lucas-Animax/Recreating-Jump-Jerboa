@@ -14,14 +14,15 @@ var direction:int = 1
 #endregion
 #region cosnts
 const gravit_value = 50
-const jump_value = 500
+const jump_value = 450.0
 const wall_gravit = 30
 const wall_impuse =1000
 const wall_jump = 300
 #endregion
 var is_dead = false
 
-func _physics_process(delta):
+
+func _physics_process(_delta):
 	if not is_dead:
 		move()
 		switch_sides()
@@ -47,6 +48,9 @@ func next_to_wall() -> bool:
 	else:return false
 
 func jump():
+	if Input.is_action_just_released("jump"):
+		velocity.y *= 0.1
+	pass
 	if is_on_floor() or next_to_wall() and not is_on_floor():
 		jump_cont = 0
 	if Input.is_action_just_pressed("jump") and jump_cont < 1:
@@ -56,14 +60,10 @@ func jump():
 			velocity.y -= wall_jump
 			dic = direction
 		else:
-			velocity.y -= jump_value
+			velocity.y -= lerp(velocity.y,jump_value,1.0)
 			dic != direction
 		
 		
-	
-	
-	
-	pass
 
 func gravit():
 	if not is_on_floor() and next_to_wall():
@@ -80,6 +80,9 @@ func gravit():
 func dead():
 	is_dead = true
 	if is_dead:
+		find_iten.key_cont = 0
+		find_iten.coin_cont = 0
 		await get_tree().create_timer(0.4).timeout
 		get_tree().reload_current_scene()
 	pass
+

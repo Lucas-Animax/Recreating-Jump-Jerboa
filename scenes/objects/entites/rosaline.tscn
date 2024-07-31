@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/rosaline.gd" id="1_b2f2c"]
 [ext_resource type="Texture2D" uid="uid://dx1q1ikqpr42k" path="res://sprits/enemy_rosaline_sprit_sheet.png" id="2_uq8uh"]
-[ext_resource type="PackedScene" uid="uid://gq6hhqm1bsdx" path="res://scenes/objects/dano_player.tscn" id="3_3naba"]
+[ext_resource type="PackedScene" uid="uid://gq6hhqm1bsdx" path="res://scenes/objects/word/dano_player.tscn" id="3_3naba"]
 
 [sub_resource type="Animation" id="Animation_s83lq"]
 length = 0.001

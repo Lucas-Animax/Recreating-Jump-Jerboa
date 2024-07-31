@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm2ksw3s0yqnf"]
+
+[ext_resource type="Script" path="res://scenes/runs/teste.gd" id="1_42dde"]
+[ext_resource type="Texture2D" uid="uid://cgsph772u1rnc" path="res://icon.svg" id="2_lw0em"]
+[ext_resource type="Script" path="res://scripts/runs_pass.gd" id="3_kb50k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g74lu"]
+size = Vector2(120, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbui0"]
+size = Vector2(120, 150)
+
+[node name="word1" type="Node2D" groups=["words"]]
+process_mode = 3
+script = ExtResource("1_42dde")
+
+[node name="run" type="TouchScreenButton" parent="."]
+scale = Vector2(0.59375, 0.5)
+texture_normal = ExtResource("2_lw0em")
+shape = SubResource("RectangleShape2D_g74lu")
+script = ExtResource("3_kb50k")
+current_level = 1
+need_keys = 1
+
+[node name="run2" type="TouchScreenButton" parent="."]
+position = Vector2(63, 119)
+scale = Vector2(0.59375, 0.5)
+texture_normal = ExtResource("2_lw0em")
+shape = SubResource("RectangleShape2D_nbui0")
+script = ExtResource("3_kb50k")
+current_level = 1
+need_keys = null
+
+[connection signal="pressed" from="run" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="run" to="run" method="_on_pressed"]
+[connection signal="pressed" from="run2" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="run2" to="run2" method="_on_pressed"]

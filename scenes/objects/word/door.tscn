@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://d057lkpdpnbhe"]
+
+[ext_resource type="Script" path="res://scripts/objects/door.gd" id="1_f1xnx"]
+[ext_resource type="Texture2D" uid="uid://d1plphpfqufxd" path="res://sprits/porta.png" id="1_qe5sp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jj8si"]
+size = Vector2(18, 12)
+
+[sub_resource type="Animation" id="Animation_bx7if"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_cl3fd"]
+resource_name = "door_close"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_7nx0j"]
+resource_name = "door_open"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qeiwb"]
+_data = {
+"RESET": SubResource("Animation_bx7if"),
+"door_close": SubResource("Animation_cl3fd"),
+"door_open": SubResource("Animation_7nx0j")
+}
+
+[node name="Door" type="Area2D" node_paths=PackedStringArray("anim")]
+script = ExtResource("1_f1xnx")
+anim = NodePath("Porta/AnimationPlayer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jj8si")
+
+[node name="Porta" type="Sprite2D" parent="."]
+texture = ExtResource("1_qe5sp")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Porta"]
+libraries = {
+"": SubResource("AnimationLibrary_qeiwb")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
