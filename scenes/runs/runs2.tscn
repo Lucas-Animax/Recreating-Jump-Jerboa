@@ -45,7 +45,7 @@ position = Vector2(82.25, 186)
 shape = SubResource("RectangleShape2D_ulkn1")
 
 [node name="Key" parent="word" instance=ExtResource("6_hsdii")]
-position = Vector2(59, 267)
+position = Vector2(59, 121)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="word"]
 environment = SubResource("Environment_vlyx3")

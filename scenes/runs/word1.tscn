@@ -1,43 +1,294 @@
-[gd_scene load_steps=6 format=3 uid="uid://cm2ksw3s0yqnf"]
+[gd_scene load_steps=21 format=3 uid="uid://cm2ksw3s0yqnf"]
 
-[ext_resource type="Script" path="res://scenes/runs/teste.gd" id="1_42dde"]
-[ext_resource type="Texture2D" uid="uid://cgsph772u1rnc" path="res://icon.svg" id="2_lw0em"]
+[ext_resource type="Texture2D" uid="uid://cnaolfc0r3g6o" path="res://sprits/tilemap_button.png" id="3_7uhyd"]
+[ext_resource type="PackedScene" uid="uid://dnj3y75g60usp" path="res://scenes/objects/word/tilemap_button.tscn" id="3_fysj7"]
 [ext_resource type="Script" path="res://scripts/runs_pass.gd" id="3_kb50k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g74lu"]
 size = Vector2(120, 130)
 
+[sub_resource type="Animation" id="Animation_twij6"]
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.000342916),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 2]
+}
+
+[sub_resource type="Animation" id="Animation_a6vxr"]
+resource_name = "click"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 3, 2]
+}
+
+[sub_resource type="Animation" id="Animation_p3nqv"]
+resource_name = "off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_1nkse"]
+resource_name = "onn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gfs01"]
+_data = {
+"RESET": SubResource("Animation_twij6"),
+"click": SubResource("Animation_a6vxr"),
+"off": SubResource("Animation_p3nqv"),
+"onn": SubResource("Animation_1nkse")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbui0"]
-size = Vector2(120, 150)
+size = Vector2(120, 130)
+
+[sub_resource type="Animation" id="Animation_8b6jm"]
+resource_name = "click"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 3, 2]
+}
+
+[sub_resource type="Animation" id="Animation_pppcq"]
+resource_name = "off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_8ci1c"]
+resource_name = "onn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_df853"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4fii"]
+_data = {
+"RESET": SubResource("Animation_df853"),
+"click": SubResource("Animation_8b6jm"),
+"off": SubResource("Animation_pppcq"),
+"onn": SubResource("Animation_8ci1c")
+}
+
+[sub_resource type="Animation" id="Animation_uxdel"]
+resource_name = "click"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [8, 9, 8]
+}
+
+[sub_resource type="Animation" id="Animation_yacq5"]
+resource_name = "onn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_87fbw"]
+resource_name = "off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_7nw4i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6nsk"]
+_data = {
+"RESET": SubResource("Animation_7nw4i"),
+"click": SubResource("Animation_uxdel"),
+"off": SubResource("Animation_87fbw"),
+"onn": SubResource("Animation_yacq5")
+}
 
 [node name="word1" type="Node2D" groups=["words"]]
 process_mode = 3
-script = ExtResource("1_42dde")
 
-[node name="run" type="TouchScreenButton" parent="."]
-scale = Vector2(0.59375, 0.5)
-texture_normal = ExtResource("2_lw0em")
+[node name="TileMap" parent="." instance=ExtResource("3_fysj7")]
+position = Vector2(14, -29)
+layer_0/tile_data = PackedInt32Array(458753, 65537, 4, 458755, 65537, 4, 458754, 65537, 4)
+
+[node name="run" type="TouchScreenButton" parent="." node_paths=PackedStringArray("anim")]
+position = Vector2(38, 212)
+scale = Vector2(0.25631, 0.22)
 shape = SubResource("RectangleShape2D_g74lu")
 script = ExtResource("3_kb50k")
 current_level = 1
+anim = NodePath("AnimationPlayer")
 
-[node name="run2" type="TouchScreenButton" parent="."]
-position = Vector2(63, 119)
-scale = Vector2(0.59375, 0.5)
-texture_normal = ExtResource("2_lw0em")
+[node name="Sprite2D" type="Sprite2D" parent="run"]
+position = Vector2(0, -9.09091)
+scale = Vector2(5, 5)
+texture = ExtResource("3_7uhyd")
+hframes = 6
+vframes = 5
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="run"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_gfs01")
+}
+
+[node name="run2" type="TouchScreenButton" parent="." node_paths=PackedStringArray("anim")]
+position = Vector2(90, 210)
+scale = Vector2(-0.260109, 0.217508)
 shape = SubResource("RectangleShape2D_nbui0")
 script = ExtResource("3_kb50k")
 current_level = 2
 need_keys = 1
+anim = NodePath("Sprite2D2/AnimationPlayer")
 
-[node name="run3" type="TouchScreenButton" parent="."]
-position = Vector2(64, 225)
-scale = Vector2(0.59375, 0.5)
-texture_normal = ExtResource("2_lw0em")
+[node name="Sprite2D2" type="Sprite2D" parent="run2"]
+rotation = 3.14159
+scale = Vector2(4.92697, -5.05729)
+texture = ExtResource("3_7uhyd")
+hframes = 6
+vframes = 5
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="run2/Sprite2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_y4fii")
+}
+
+[node name="run3" type="TouchScreenButton" parent="." node_paths=PackedStringArray("anim")]
+position = Vector2(140, 210)
+scale = Vector2(0.262944, 0.204434)
 shape = SubResource("RectangleShape2D_nbui0")
 script = ExtResource("3_kb50k")
 current_level = 2
 need_keys = 2
+anim = NodePath("AnimationPlayer")
+
+[node name="Sprite2D3" type="Sprite2D" parent="run3"]
+scale = Vector2(4.87385, 5.38071)
+texture = ExtResource("3_7uhyd")
+hframes = 6
+vframes = 5
+frame = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="run3"]
+libraries = {
+"": SubResource("AnimationLibrary_o6nsk")
+}
 
 [connection signal="pressed" from="run" to="." method="_on_run_pressed"]
 [connection signal="pressed" from="run" to="run" method="_on_pressed"]

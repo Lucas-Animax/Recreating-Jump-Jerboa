@@ -44,13 +44,13 @@ position = Vector2(82.25, 186)
 shape = SubResource("RectangleShape2D_ulkn1")
 
 [node name="Key" parent="word" instance=ExtResource("6_itfcm")]
-position = Vector2(48, 274)
+position = Vector2(61, 269)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="word"]
 environment = SubResource("Environment_vlyx3")
 
 [node name="Key2" parent="word" instance=ExtResource("6_itfcm")]
-position = Vector2(91, 134)
+position = Vector2(129, 271)
 
 [node name="entities" type="Node" parent="."]
 
@@ -64,10 +64,10 @@ scale = Vector2(1, 1)
 [node name="Coins" type="Node" parent="."]
 
 [node name="coin" parent="Coins" instance=ExtResource("4_r44wx")]
-position = Vector2(122, 261)
+position = Vector2(103, 244)
 
 [node name="coin2" parent="Coins" instance=ExtResource("4_r44wx")]
 position = Vector2(61, 219)
 
 [node name="coin3" parent="Coins" instance=ExtResource("4_r44wx")]
-position = Vector2(77, 105)
+position = Vector2(79, 127)
