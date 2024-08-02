@@ -7,6 +7,7 @@ static var reload:bool = false
 
 func _ready():
 	visible = false
+	
 	pass
 
 func _physics_process(_delta): 
@@ -28,6 +29,9 @@ func open_menu():
 
 
 func _on_touch_next_fase_pressed():
+		Trasition_Scene.stats["click_button"] = true
+		visible = false
+		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_file("res://scenes/runs/word1.tscn")
 		pass 
 

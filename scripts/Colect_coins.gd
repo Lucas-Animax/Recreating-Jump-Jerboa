@@ -6,7 +6,8 @@ static var key_cont:int = 0
 static var current_keys:int
 
 var need_key = {
-"key_run1":1,
+"key_run0": 1,
+"key_run1":2,
 "key_run2":2
 
 }

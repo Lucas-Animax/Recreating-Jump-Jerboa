@@ -82,7 +82,8 @@ func dead():
 	if is_dead:
 		find_iten.key_cont = 0
 		find_iten.coin_cont = 0
-		await get_tree().create_timer(0.4).timeout
+		Trasition_Scene.stats["click_button"] = true
+		await get_tree().create_timer(1).timeout
 		get_tree().reload_current_scene()
 	pass
 

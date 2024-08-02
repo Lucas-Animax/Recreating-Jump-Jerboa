@@ -18,13 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 Word="res://scripts/word.gd"
+Transition="*res://scenes/objects/word/transition.tscn"
 
 [display]
 
 window/size/viewport_width=180
 window/size/viewport_height=320
-window/size/window_width_override=360
-window/size/window_height_override=620
+window/size/window_width_override=540
+window/size/window_height_override=960
 window/stretch/mode="canvas_items"
 
 [dotnet]

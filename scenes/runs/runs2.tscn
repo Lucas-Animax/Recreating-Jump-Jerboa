@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7jmi77x5wan2"]
+[gd_scene load_steps=13 format=3 uid="uid://b7jmi77x5wan2"]
 
 [ext_resource type="Script" path="res://scripts/run.gd" id="1_m6auj"]
 [ext_resource type="PackedScene" uid="uid://b052torqpsshi" path="res://scenes/objects/word/pass_menu.tscn" id="2_6f0n3"]
+[ext_resource type="PackedScene" uid="uid://bqb16dxtx7sgv" path="res://scenes/objects/word/transition.tscn" id="2_k3vv1"]
 [ext_resource type="PackedScene" uid="uid://d057lkpdpnbhe" path="res://scenes/objects/word/door.tscn" id="3_sr2p0"]
 [ext_resource type="PackedScene" uid="uid://1mpdnluark7s" path="res://scenes/objects/word/tile_map.tscn" id="4_354d2"]
 [ext_resource type="PackedScene" uid="uid://cxggirh27jtra" path="res://scenes/objects/word/wall_false.tscn" id="5_h4ogw"]
@@ -21,6 +22,8 @@ glow_normalized = true
 script = ExtResource("1_m6auj")
 name_run = "key_run2"
 need_key = 2
+
+[node name="Transition" parent="." instance=ExtResource("2_k3vv1")]
 
 [node name="Pass_Menu" parent="." instance=ExtResource("2_6f0n3")]
 visible = false
