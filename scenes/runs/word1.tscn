@@ -1,5 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://cm2ksw3s0yqnf"]
+[gd_scene load_steps=18 format=3 uid="uid://cm2ksw3s0yqnf"]
 
+[ext_resource type="Script" path="res://scripts/run.gd" id="1_7xvwd"]
+[ext_resource type="PackedScene" uid="uid://bqb16dxtx7sgv" path="res://scenes/objects/word/transition.tscn" id="1_ubuvw"]
 [ext_resource type="Texture2D" uid="uid://cnaolfc0r3g6o" path="res://sprits/tilemap_button.png" id="3_7uhyd"]
 [ext_resource type="PackedScene" uid="uid://dnj3y75g60usp" path="res://scenes/objects/word/tilemap_button.tscn" id="3_fysj7"]
 [ext_resource type="Script" path="res://scripts/runs_pass.gd" id="3_kb50k"]
@@ -80,73 +82,19 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbui0"]
 size = Vector2(120, 130)
 
-[sub_resource type="Animation" id="Animation_8b6jm"]
-resource_name = "click"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [2, 3, 2]
-}
-
-[sub_resource type="Animation" id="Animation_pppcq"]
-resource_name = "off"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
-
-[sub_resource type="Animation" id="Animation_8ci1c"]
-resource_name = "onn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_df853"]
+[sub_resource type="Animation" id="Animation_7nw4i"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath("Sprite2D3:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4fii"]
-_data = {
-"RESET": SubResource("Animation_df853"),
-"click": SubResource("Animation_8b6jm"),
-"off": SubResource("Animation_pppcq"),
-"onn": SubResource("Animation_8ci1c")
+"values": [9]
 }
 
 [sub_resource type="Animation" id="Animation_uxdel"]
@@ -165,21 +113,6 @@ tracks/0/keys = {
 "values": [8, 9, 8]
 }
 
-[sub_resource type="Animation" id="Animation_yacq5"]
-resource_name = "onn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D3:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [8]
-}
-
 [sub_resource type="Animation" id="Animation_87fbw"]
 resource_name = "off"
 tracks/0/type = "value"
@@ -195,8 +128,8 @@ tracks/0/keys = {
 "values": [9]
 }
 
-[sub_resource type="Animation" id="Animation_7nw4i"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_yacq5"]
+resource_name = "onn"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -207,7 +140,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [9]
+"values": [8]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o6nsk"]
@@ -220,20 +153,21 @@ _data = {
 
 [node name="word1" type="Node2D" groups=["words"]]
 process_mode = 3
+script = ExtResource("1_7xvwd")
 
 [node name="TileMap" parent="." instance=ExtResource("3_fysj7")]
 position = Vector2(14, -29)
 layer_0/tile_data = PackedInt32Array(458753, 65537, 4, 458755, 65537, 4, 458754, 65537, 4)
 
-[node name="run" type="TouchScreenButton" parent="." node_paths=PackedStringArray("anim")]
+[node name="run0" type="TouchScreenButton" parent="." node_paths=PackedStringArray("anim", "label")]
 position = Vector2(38, 212)
 scale = Vector2(0.25631, 0.22)
 shape = SubResource("RectangleShape2D_g74lu")
 script = ExtResource("3_kb50k")
-current_level = 1
 anim = NodePath("AnimationPlayer")
+label = NodePath("Label")
 
-[node name="Sprite2D" type="Sprite2D" parent="run"]
+[node name="Sprite2D" type="Sprite2D" parent="run0"]
 position = Vector2(0, -9.09091)
 scale = Vector2(5, 5)
 texture = ExtResource("3_7uhyd")
@@ -241,35 +175,49 @@ hframes = 6
 vframes = 5
 frame = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="run"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="run0"]
 root_node = NodePath("../Sprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_gfs01")
 }
 
-[node name="run2" type="TouchScreenButton" parent="." node_paths=PackedStringArray("anim")]
-position = Vector2(90, 210)
-scale = Vector2(-0.260109, 0.217508)
-shape = SubResource("RectangleShape2D_nbui0")
-script = ExtResource("3_kb50k")
-current_level = 2
-need_keys = 1
-anim = NodePath("Sprite2D2/AnimationPlayer")
+[node name="Label" type="Label" parent="run0"]
+offset_left = -19.5076
+offset_top = 72.7272
+offset_right = 20.4924
+offset_bottom = 95.7272
 
-[node name="Sprite2D2" type="Sprite2D" parent="run2"]
-rotation = 3.14159
-scale = Vector2(4.92697, -5.05729)
+[node name="run1" type="TouchScreenButton" parent="." node_paths=PackedStringArray("anim", "label")]
+position = Vector2(87, 212)
+scale = Vector2(0.25631, 0.22)
+shape = SubResource("RectangleShape2D_g74lu")
+script = ExtResource("3_kb50k")
+current_level = 1
+need_keys = 1
+anim = NodePath("AnimationPlayer")
+label = NodePath("Label")
+
+[node name="Sprite2D" type="Sprite2D" parent="run1"]
+position = Vector2(0, -9.09091)
+scale = Vector2(5, 5)
 texture = ExtResource("3_7uhyd")
 hframes = 6
 vframes = 5
 frame = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="run2/Sprite2D2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="run1"]
+root_node = NodePath("../Sprite2D")
 libraries = {
-"": SubResource("AnimationLibrary_y4fii")
+"": SubResource("AnimationLibrary_gfs01")
 }
 
-[node name="run3" type="TouchScreenButton" parent="." node_paths=PackedStringArray("anim")]
+[node name="Label" type="Label" parent="run1"]
+offset_left = -19.5076
+offset_top = 72.7272
+offset_right = 20.4924
+offset_bottom = 95.7272
+
+[node name="run2" type="TouchScreenButton" parent="." node_paths=PackedStringArray("anim", "label")]
 position = Vector2(140, 210)
 scale = Vector2(0.262944, 0.204434)
 shape = SubResource("RectangleShape2D_nbui0")
@@ -277,22 +225,31 @@ script = ExtResource("3_kb50k")
 current_level = 2
 need_keys = 2
 anim = NodePath("AnimationPlayer")
+label = NodePath("Label")
 
-[node name="Sprite2D3" type="Sprite2D" parent="run3"]
+[node name="Sprite2D3" type="Sprite2D" parent="run2"]
 scale = Vector2(4.87385, 5.38071)
 texture = ExtResource("3_7uhyd")
 hframes = 6
 vframes = 5
 frame = 9
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="run3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="run2"]
 libraries = {
 "": SubResource("AnimationLibrary_o6nsk")
 }
 
-[connection signal="pressed" from="run" to="." method="_on_run_pressed"]
-[connection signal="pressed" from="run" to="run" method="_on_pressed"]
+[node name="Label" type="Label" parent="run2"]
+offset_left = -7.60618
+offset_top = 83.1564
+offset_right = 32.3938
+offset_bottom = 106.156
+
+[node name="Transition" parent="." instance=ExtResource("1_ubuvw")]
+
+[connection signal="pressed" from="run0" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="run0" to="run0" method="_on_pressed"]
+[connection signal="pressed" from="run1" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="run1" to="run1" method="_on_pressed"]
 [connection signal="pressed" from="run2" to="." method="_on_run_pressed"]
 [connection signal="pressed" from="run2" to="run2" method="_on_pressed"]
-[connection signal="pressed" from="run3" to="." method="_on_run_pressed"]
-[connection signal="pressed" from="run3" to="run3" method="_on_pressed"]
