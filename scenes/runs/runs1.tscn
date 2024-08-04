@@ -57,7 +57,7 @@ environment = SubResource("Environment_vlyx3")
 [node name="entities" type="Node" parent="."]
 
 [node name="Player" parent="entities" instance=ExtResource("1_n5gr2")]
-position = Vector2(63, 81)
+position = Vector2(40, 138)
 
 [node name="rosaline" parent="entities" instance=ExtResource("5_kggu8")]
 position = Vector2(114, 183)

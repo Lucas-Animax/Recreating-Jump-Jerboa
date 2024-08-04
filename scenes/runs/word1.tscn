@@ -223,7 +223,7 @@ scale = Vector2(0.262944, 0.204434)
 shape = SubResource("RectangleShape2D_nbui0")
 script = ExtResource("3_kb50k")
 current_level = 2
-need_keys = 2
+need_keys = 3
 anim = NodePath("AnimationPlayer")
 label = NodePath("Label")
 
