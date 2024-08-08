@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://cm2ksw3s0yqnf"]
+[gd_scene load_steps=19 format=3 uid="uid://cm2ksw3s0yqnf"]
 
 [ext_resource type="Script" path="res://scripts/run.gd" id="1_7xvwd"]
 [ext_resource type="PackedScene" uid="uid://bqb16dxtx7sgv" path="res://scenes/objects/word/transition.tscn" id="1_ubuvw"]
 [ext_resource type="Texture2D" uid="uid://cnaolfc0r3g6o" path="res://sprits/tilemap_button.png" id="3_7uhyd"]
 [ext_resource type="PackedScene" uid="uid://dnj3y75g60usp" path="res://scenes/objects/word/tilemap_button.tscn" id="3_fysj7"]
 [ext_resource type="Script" path="res://scripts/runs_pass.gd" id="3_kb50k"]
+[ext_resource type="AudioStream" uid="uid://cpdn74mb4h5x2" path="res://sonds/749479__nancy_driscoll__a-cinematic-space-journey.mp3" id="6_4jx0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g74lu"]
 size = Vector2(120, 130)
@@ -246,6 +247,10 @@ offset_right = 32.3938
 offset_bottom = 106.156
 
 [node name="Transition" parent="." instance=ExtResource("1_ubuvw")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4jx0x")
+autoplay = true
 
 [connection signal="pressed" from="run0" to="." method="_on_run_pressed"]
 [connection signal="pressed" from="run0" to="run0" method="_on_pressed"]

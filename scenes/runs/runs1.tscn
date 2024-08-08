@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://7tsm2xuimrrg"]
+[gd_scene load_steps=14 format=3 uid="uid://7tsm2xuimrrg"]
 
 [ext_resource type="Script" path="res://scripts/run.gd" id="1_68fdh"]
 [ext_resource type="PackedScene" uid="uid://phrala3y17gl" path="res://scenes/objects/entites/player.tscn" id="1_n5gr2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dtskkfdopq382" path="res://scenes/objects/word/key.tscn" id="6_itfcm"]
 [ext_resource type="PackedScene" uid="uid://cxggirh27jtra" path="res://scenes/objects/word/wall_false.tscn" id="6_ondxi"]
 [ext_resource type="PackedScene" uid="uid://d057lkpdpnbhe" path="res://scenes/objects/word/door.tscn" id="7_pgpbj"]
+[ext_resource type="AudioStream" uid="uid://bvbtn4q3ttuak" path="res://sonds/749383__madgravitystudio__which-way-on-the-verge.mp3" id="11_07r6v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulkn1"]
 size = Vector2(6.5, 36)
@@ -57,6 +58,7 @@ environment = SubResource("Environment_vlyx3")
 [node name="entities" type="Node" parent="."]
 
 [node name="Player" parent="entities" instance=ExtResource("1_n5gr2")]
+process_mode = 1
 position = Vector2(40, 138)
 
 [node name="rosaline" parent="entities" instance=ExtResource("5_kggu8")]
@@ -75,3 +77,8 @@ position = Vector2(61, 219)
 position = Vector2(79, 127)
 
 [node name="Transition" parent="." instance=ExtResource("2_20oj8")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("11_07r6v")
+autoplay = true

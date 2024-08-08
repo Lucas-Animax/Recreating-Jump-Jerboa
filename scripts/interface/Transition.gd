@@ -15,15 +15,10 @@ func _physics_process(_delta):
 func animation_trasition():
 	if stats["word_start"]:
 		anim.play("animation_out")
-		get_tree().paused = true
-		await anim.animation_finished
-		get_tree().paused =  false
 		stats["word_start"] = false
 
 	if stats["click_button"]:
 		anim.play("animation_in")
-		await anim.animation_finished
-		get_tree().paused =  false
 		stats["click_button"] = false
 	
 
