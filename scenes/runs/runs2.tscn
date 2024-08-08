@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7jmi77x5wan2"]
+[gd_scene load_steps=14 format=3 uid="uid://b7jmi77x5wan2"]
 
 [ext_resource type="Script" path="res://scripts/run.gd" id="1_m6auj"]
 [ext_resource type="PackedScene" uid="uid://b052torqpsshi" path="res://scenes/objects/word/pass_menu.tscn" id="2_6f0n3"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://phrala3y17gl" path="res://scenes/objects/entites/player.tscn" id="7_rxp5y"]
 [ext_resource type="PackedScene" uid="uid://brpo4mrc4o5t3" path="res://scenes/objects/entites/rosaline.tscn" id="8_0h6b2"]
 [ext_resource type="PackedScene" uid="uid://bt5mskovywj26" path="res://scenes/objects/word/coin.tscn" id="9_fiqt6"]
+[ext_resource type="AudioStream" uid="uid://bvbtn4q3ttuak" path="res://sonds/749383__madgravitystudio__which-way-on-the-verge.mp3" id="11_mjl4c"]
 
 [sub_resource type="Environment" id="Environment_vlyx3"]
 glow_enabled = true
@@ -22,10 +23,10 @@ script = ExtResource("1_m6auj")
 name_run = "key_run2"
 need_key = 2
 
-[node name="Transition" parent="." instance=ExtResource("2_k3vv1")]
-
 [node name="Pass_Menu" parent="." instance=ExtResource("2_6f0n3")]
 visible = false
+
+[node name="Transition" parent="." instance=ExtResource("2_k3vv1")]
 
 [node name="word" type="Node" parent="."]
 
@@ -73,3 +74,8 @@ position = Vector2(75, 214)
 
 [node name="coin3" parent="Coins" instance=ExtResource("9_fiqt6")]
 position = Vector2(88, 214)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("11_mjl4c")
+autoplay = true

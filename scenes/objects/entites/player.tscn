@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://phrala3y17gl"]
+[gd_scene load_steps=16 format=3 uid="uid://phrala3y17gl"]
 
 [ext_resource type="Script" path="res://scripts/player_propriedades.gd" id="1_wwrql"]
 [ext_resource type="Texture2D" uid="uid://bk8yeovpsphyf" path="res://sprits/player_sprit_sheet.png" id="2_j6da2"]
 [ext_resource type="Script" path="res://scripts/player_anim.gd" id="3_8tcci"]
 [ext_resource type="Script" path="res://scripts/Colect_coins.gd" id="4_6g5ov"]
+[ext_resource type="AudioStream" uid="uid://0w8bqjwsys7k" path="res://sonds/458641__matrixxx__retro-jump-02.wav" id="5_bgpqj"]
+[ext_resource type="AudioStream" uid="uid://dvueh6lb33mi4" path="res://sonds/402767__matrixxx__retro-coin-03.wav" id="6_r76en"]
+[ext_resource type="AudioStream" uid="uid://bvbtn4q3ttuak" path="res://sonds/749383__madgravitystudio__which-way-on-the-verge.mp3" id="7_j3570"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tgvo"]
 size = Vector2(8, 7)
@@ -117,9 +120,11 @@ _data = {
 "wall_slide": SubResource("Animation_bqm35")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("find_coin", "spr", "wall_ray") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("jump_efect", "die_efect", "find_coin", "spr", "wall_ray") groups=["player"]]
 collision_mask = 15
 script = ExtResource("1_wwrql")
+jump_efect = NodePath("Efects/jump")
+die_efect = NodePath("Efects/die")
 find_coin = NodePath("Colect_coins")
 spr = NodePath("PlayerSprit")
 wall_ray = NodePath("RayCast2D")
@@ -147,5 +152,19 @@ libraries = {
 "": SubResource("AnimationLibrary_0wc7q")
 }
 
-[node name="Colect_coins" type="Node" parent="."]
+[node name="Colect_coins" type="Node" parent="." node_paths=PackedStringArray("coin_efect")]
 script = ExtResource("4_6g5ov")
+coin_efect = NodePath("../Efects/find coin")
+
+[node name="Efects" type="AudioStreamPlayer" parent="."]
+
+[node name="jump" type="AudioStreamPlayer" parent="Efects"]
+stream = ExtResource("5_bgpqj")
+volume_db = -20.955
+
+[node name="find coin" type="AudioStreamPlayer" parent="Efects"]
+stream = ExtResource("6_r76en")
+volume_db = -10.0
+
+[node name="die" type="AudioStreamPlayer" parent="Efects"]
+stream = ExtResource("7_j3570")
