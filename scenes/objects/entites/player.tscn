@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://phrala3y17gl"]
+[gd_scene load_steps=17 format=3 uid="uid://phrala3y17gl"]
 
 [ext_resource type="Script" path="res://scripts/player_propriedades.gd" id="1_wwrql"]
 [ext_resource type="Texture2D" uid="uid://bk8yeovpsphyf" path="res://sprits/player_sprit_sheet.png" id="2_j6da2"]
@@ -120,6 +120,8 @@ _data = {
 "wall_slide": SubResource("Animation_bqm35")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_602tu"]
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("jump_efect", "die_efect", "find_coin", "spr", "wall_ray") groups=["player"]]
 collision_mask = 15
 script = ExtResource("1_wwrql")
@@ -168,3 +170,8 @@ volume_db = -10.0
 
 [node name="die" type="AudioStreamPlayer" parent="Efects"]
 stream = ExtResource("7_j3570")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+scale = Vector2(-735.157, 42.6784)
+shape = SubResource("RectangleShape2D_602tu")
+action = "jump"
